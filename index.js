@@ -183,3 +183,73 @@ function GenerateManager(managerArray) {
     </div>`;
   employeeArray.push(temp);
 }
+function GenerateManager(managerArray) {
+  temp = `<div class="card" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">${managerArray[0].getName()}</h5>
+        <p class="card-text">Manager</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">${managerArray[0].getId()}</li>
+        <li class="list-group-item">${managerArray[0].getEmail()}</li>
+        <li class="list-group-item">${managerArray[0].getOfficeNumber()}</li>
+      </ul>
+      <!-- <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div> -->
+    </div>`;
+  employeeArray.push(temp);
+}
+function GenerateIntern(internArray) {
+    
+    for (let i = 0; i < internArray.length; i++) {
+        var temp =
+            `<div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title">${internArray[i].getName()}</h5>
+      <p class="card-text">Intern</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${internArray[i].getId()}</li>
+      <li class="list-group-item">${internArray[i].getEmail()}</li>
+      <li class="list-group-item">${internArray[i].getSchool()}</li>
+    </ul>
+    <!-- <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div> -->
+  </div>`;
+        employeeArray.push(temp);
+    }
+    
+    // 
+}
+
+
+function GenerateEngineer(engineerArray) {
+
+    for (let i = 0; i < engineerArray.length; i++) {
+        var temp =
+        `<div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title">${engineerArray[i].getName()}</h5>
+      <p class="card-text">Engineer</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${engineerArray[i].getId()}</li>
+      <li class="list-group-item">${engineerArray[i].getEmail()}</li>
+      <li class="list-group-item">${engineerArray[i].getGithub()}</li>
+    </ul>
+    <!-- <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div> -->
+  </div>`
+  employeeArray.push(temp);
+    }
+   
+}
