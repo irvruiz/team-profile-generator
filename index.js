@@ -110,34 +110,32 @@ function promptEngineer() {
       selectRole();
     });
 }
-function promptEngineer() {
-  inqurier
-    .prompt([
-      {
-        type: "input",
-        message: "what is your name",
-        name: "name",
-      },
-      {
-        type: "input",
-        message: "what is your id",
-        name: "id",
-      },
-      {
-        type: "input",
-        message: "what is your email",
-        name: "email",
-      },
-      {
-        type: "input",
-        message: "what is your github",
-        name: "github",
-      },
+function selectRole() {
+    inqurier.prompt([
+        {
+            type: "list",
+            choices: ["Intern", "Engineer", "Finishing building your team"],
+            message: "Pick a role",
+            name: "role"
+        }
     ])
     .then((data) => {
-      engineerArray.push(
-        new Engineer(data.name, data.id, data.email, data.github)
-      );
-      selectRole();
-    });
+        if (data.role === "Engineer") {
+            promptEngineer();
+        }
+        if (data.role === "Intern") {
+            promptIntern();
+        }
+        if (data.role === "Finishing building your team") {
+            GenerateManager(managerArray);
+            //engineer cards
+            GenerateEngineer(engineerArray);
+            GenerateIntern(internArray);
+            renderHTML()
+            init()
+
+            console.log(renderHTML());
+
+        }
+     }) 
 }
