@@ -203,10 +203,8 @@ function GenerateManager(managerArray) {
   employeeArray.push(temp);
 }
 function GenerateIntern(internArray) {
-    
-    for (let i = 0; i < internArray.length; i++) {
-        var temp =
-            `<div class="card" style="width: 18rem;">
+  for (let i = 0; i < internArray.length; i++) {
+    var temp = `<div class="card" style="width: 18rem;">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">${internArray[i].getName()}</h5>
@@ -222,18 +220,13 @@ function GenerateIntern(internArray) {
       <a href="#" class="card-link">Another link</a>
     </div> -->
   </div>`;
-        employeeArray.push(temp);
-    }
-    
-    // 
+    employeeArray.push(temp);
+  }
 }
 
-
 function GenerateEngineer(engineerArray) {
-
-    for (let i = 0; i < engineerArray.length; i++) {
-        var temp =
-        `<div class="card" style="width: 18rem;">
+  for (let i = 0; i < engineerArray.length; i++) {
+    var temp = `<div class="card" style="width: 18rem;">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">${engineerArray[i].getName()}</h5>
@@ -248,8 +241,22 @@ function GenerateEngineer(engineerArray) {
       <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a>
     </div> -->
-  </div>`
-  employeeArray.push(temp);
-    }
-   
+  </div>`;
+    employeeArray.push(temp);
+  }
 }
+function employeeArrayReturn() {
+  var tmp = "";
+  for (let i = 0; i < employeeArray.length; i++) {
+    tmp += employeeArray[i];
+    console.log("sid : " + employeeArray[i]);
+  }
+  console.log("dd: " + tmp);
+  return tmp;
+}
+
+function dataForHTML() {}
+
+const init = () => {
+  fs.writeFileSync("index.html", renderHTML());
+};
